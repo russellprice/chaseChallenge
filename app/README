@@ -1,0 +1,13 @@
+
+If I had more time  : in no particular order
+1. I would have wanted to make how the caching the current cities geo more robust such as deleting it after a certain action or time
+2. I would have also wanted to clean up the response code in the VM on how its handling all of it as I think it could be done better
+3. UI needs work as well
+4. Handle main activity initObserver better as clearing the adapter and notifySetChange isn't best practice
+5. I would have liked to handle how the data was comming into the app as it is a list but its not handled great in the VM
+6. general clean up such as magic strings/numbers, error handling, etc
+
+
+Issues
+I was having some issues with the unit tests but wanted to show my standard way of testing, decided to just give it with it not working properly as time constraints
+

@@ -1,0 +1,89 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.example.chasechallenge'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.chasechallenge"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "API_KEY", API_KEY
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_9
+        targetCompatibility JavaVersion.VERSION_1_9
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+    testImplementation "app.cash.turbine:turbine:0.12.3"
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // navigation
+    def nav_version = "2.5.3"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // DI : hilt
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.okhttp3:okhttp:4.10.0"
+
+    //loc
+    implementation "com.google.android.gms:play-services-location:21.0.1"
+
+    //permissions
+    implementation 'com.vmadalin:easypermissions-ktx:1.0.0'
+
+    //groupie
+    implementation "com.github.lisawray.groupie:groupie:2.10.1"
+    implementation "com.github.lisawray.groupie:groupie-viewbinding:2.10.1"
+    implementation "com.github.lisawray.groupie:groupie-kotlin-android-extensions:2.10.1"
+
+    //room
+    implementation "androidx.room:room-runtime:2.5.1"
+    implementation 'androidx.room:room-ktx:2.5.1'
+    kapt "androidx.room:room-compiler:2.5.1"
+
+    testImplementation "io.mockk:mockk:1.13.4"
+
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">chaseChallenge</string>
+    <string name="longitude">Long:</string>
+    <string name="latitude">Lat:</string>
+    <string name="permission_coarse_location">Corase location is required to automiatcally pull your cities data</string>
+    <string name="weekly_weather">Weekly weather</string>
+    <string name="current_temperature">Current temperature</string>
+</resources>
